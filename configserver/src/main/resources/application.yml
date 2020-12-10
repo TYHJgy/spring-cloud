@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+         uri: file:\\E:\01study\java\project\spring_cloud\configrepo
+server:
+  port: 10002
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9999/eureka/
+---
+spring:
+  profiles: dev
+  cloud:
+    config:
+      server:
+        git:
+          uri: file:\\E:\05work\java\workspace\yunnan\configrepo
+          strict-host-key-checking: false
+server:
+  port: 10001
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9999/eureka/

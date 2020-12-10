@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: eurekaserver
+server:
+  port: 9999
+eureka:
+  server:
+    enable-self-preservation: false
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: false
+    register-with-eureka: false #false表明自己是一个eureka server
+    service-url:
+      defaultZone: http://127.0.0.1:9999/eureka/
+---
+spring:
+  profiles: dev
+server:
+  port: 10000
+eureka:
+  server:
+    enable-self-preservation: false
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: false
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://127.0.0.1:10000/eureka/

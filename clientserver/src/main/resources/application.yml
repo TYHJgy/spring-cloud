@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: clientserver
+  cloud:
+    config:
+      server:
+        git:
+         uri: file:\\E:\01study\java\project\spring_cloud\configrepo
+server:
+  port: 10003
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9999/eureka/
